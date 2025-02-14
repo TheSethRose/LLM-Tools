@@ -1,6 +1,6 @@
 # LLM Tools
 
-A collection of tools designed to help with Large Language Model (LLM) development and debugging.
+A collection of tools designed to help with using a Large Language Model (LLM) to assist with development and debugging.
 
 ## Code Tree Generator
 
