@@ -158,9 +158,13 @@ def main():
         extractor = ErrorContextExtractor(os.getcwd())
         report = extractor.generate_error_report(e)
 
+        # Get the directory where this script is located
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        output_dir = os.path.join(script_dir, "output")
+        os.makedirs(output_dir, exist_ok=True)
+
         # Save the report
-        output_file = Path("output") / "error_context.md"
-        output_file.parent.mkdir(exist_ok=True)
+        output_file = os.path.join(output_dir, "error_context.md")
 
         with open(output_file, "w", encoding="utf-8") as f:
             f.write(report)
