@@ -180,8 +180,14 @@ def main():
     base_dir = os.getcwd()
     ignore_patterns, negative_patterns = load_gitignore(base_dir)
 
-    # Open output file
-    with open('output.md', 'w', encoding='utf-8') as outfile:
+    # Get the directory where this script is located
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    output_dir = os.path.join(script_dir, "output")
+    os.makedirs(output_dir, exist_ok=True)
+
+    # Open output file in the script's output directory
+    output_file = os.path.join(output_dir, "code_tree.md")
+    with open(output_file, 'w', encoding='utf-8') as outfile:
         # Add a minimal header
         outfile.write("# Project Structure\n\n")
 
@@ -201,7 +207,7 @@ def main():
                 content_lines = print_file_contents(full_path)
                 outfile.write("\n".join(content_lines))
 
-    print("Output written to output.md")
+    print(f"Output written to {output_file}")
 
 if __name__ == "__main__":
     main()
