@@ -173,20 +173,38 @@ def print_file_contents(file_path):
     output_lines.append("```\n")
     return output_lines
 
+# --- Ensure generate.py and output.md are in .gitignore ---
+def ensure_gitignore_entries():
+    gitignore_path = os.path.join(os.getcwd(), '.gitignore')
+    entries_to_add = ['generate.py', 'output.md']
+    existing = set()
+    if os.path.exists(gitignore_path):
+        with open(gitignore_path, 'r', encoding='utf-8') as f:
+            for line in f:
+                entry = line.strip()
+                if entry:
+                    existing.add(entry)
+    missing = [e for e in entries_to_add if e not in existing]
+    if missing:
+        with open(gitignore_path, 'a', encoding='utf-8') as f:
+            for entry in missing:
+                f.write(f"\n{entry}")
+
 # ------------------------
 # Main function
 # ------------------------
 def main():
+    ensure_gitignore_entries()
     base_dir = os.getcwd()
     ignore_patterns, negative_patterns = load_gitignore(base_dir)
 
     # Get the directory where this script is located
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    output_dir = os.path.join(script_dir, "output")
+    output_dir = os.path.join(script_dir, "")
     os.makedirs(output_dir, exist_ok=True)
 
     # Open output file in the script's output directory
-    output_file = os.path.join(output_dir, "code_tree.md")
+    output_file = os.path.join(output_dir, "output.md")
     with open(output_file, 'w', encoding='utf-8') as outfile:
         # Add a minimal header
         outfile.write("# Project Structure\n\n")
