@@ -1,6 +1,6 @@
 # LLM Tools
 
-A collection of tools designed to help with using a Large Language Model (LLM) to assist with development and debugging.
+A collection of tools designed to help with using a Large Language Model (LLM) to assist with development and debugging. This repository also includes Windsurf and Taskmaster rules for AI-assisted development workflows.
 
 ## Tools Overview
 
@@ -76,8 +76,60 @@ CUSTOM_EXCLUDES = [
 - Python 3.6+
 - No external dependencies required
 
+## Windsurf and Taskmaster Rules
+
+This repository includes AI development workflow rules in the `.windsurf` directory:
+
+### Taskmaster Development Workflow
+
+Taskmaster is a task-driven development workflow tool that helps manage and track project tasks. The tool is based on [https://github.com/eyaltoledano/claude-task-master](https://github.com/eyaltoledano/claude-task-master), but this repository includes custom Windsurf rules that are not part of the original project.
+
+#### Key Features
+
+- **Task Management**: Create, update, and track tasks with dependencies and priorities
+- **Task Breakdown**: Break complex tasks into manageable subtasks
+- **Complexity Analysis**: Analyze task complexity to better allocate resources
+- **Progress Tracking**: Monitor project progress with status updates
+
+#### Common Commands
+
+```bash
+# Install Taskmaster globally
+npm install -g task-master-ai
+
+# Initialize a new project
+task-master init
+
+# List all tasks
+task-master list
+
+# See the next task to work on
+task-master next
+
+# Expand a task into subtasks
+task-master expand --id=<id>
+
+# Mark a task as complete
+task-master set-status --id=<id> --status=done
+
+# Generate task files from tasks.json
+task-master generate
+```
+
+### Windsurf Rules
+
+The `.windsurf` directory contains rules and guidelines for AI-assisted development, including:
+
+- Development workflow processes
+- Code analysis and refactoring techniques
+- Documentation standards
+- Task management best practices
+
+These rules help maintain consistency and quality in AI-assisted development projects.
+
 ## Contributing
 Contributions are welcome! Feel free to:
-- Improve the tool
+- Improve the tools
 - Add more configuration options
+- Enhance the Windsurf and Taskmaster rules
 - Improve documentation
