@@ -229,6 +229,6 @@ All other settings (model, tokens, temperature, log level, endpoints) are manage
 
 ---
 
-For workflow integration, see Development Workflow Guide in .Windsurf/rules/dev_workflow.mdc.
+For workflow integration, see Development Workflow Guide in .windsurf/rules/dev_workflow.md.
 
 ---

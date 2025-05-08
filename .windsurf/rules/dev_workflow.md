@@ -13,16 +13,17 @@ This guide summarizes how to use Task Master for software development project ma
 Task Master can be used via:
 
 1. MCP Server (for AI agents, IDEs like Windsurf)
-    - Exposes tools such as get_tasks, add_subtask.
-    - Offers structured data, better performance, richer error handling.
-    - See mcp.mdc and taskmaster.mdc for tool/command mapping.
-    - Restart MCP server after changes to scripts/modules or tool definitions.
+
+   - Exposes tools such as get_tasks, add_subtask.
+   - Offers structured data, better performance, richer error handling.
+   - See mcp.mdc and taskmaster.mdc for tool/command mapping.
+   - Restart MCP server after changes to scripts/modules or tool definitions.
 
 2. CLI (for users, fallback)
-    - Use task-master command in terminal.
-    - Install globally (npm install -g task-master-ai) or use npx.
-    - CLI commands mirror MCP tools (e.g., task-master list = get_tasks).
-    - See taskmaster.mdc for command reference.
+   - Use task-master command in terminal.
+   - Install globally (npm install -g task-master-ai) or use npx.
+   - CLI commands mirror MCP tools (e.g., task-master list = get_tasks).
+   - See taskmaster.mdc for command reference.
 
 ## Standard Workflow
 
@@ -60,8 +61,8 @@ Task Master can be used via:
 ## Implementation Drift
 
 - If implementation diverges from plan or new dependencies arise:
-    - update/task-master update --from=<futureTaskId> --prompt='...' [--research] for multiple tasks.
-    - update_task/task-master update-task --id=<taskId> --prompt='...' [--research] for one task.
+  - update/task-master update --from=<futureTaskId> --prompt='...' [--research] for multiple tasks.
+  - update_task/task-master update-task --id=<taskId> --prompt='...' [--research] for one task.
 
 ## Task Status
 
@@ -115,6 +116,6 @@ Task Master can be used via:
 - To find exported functions/constants: rg "export (async function|function|const) w+".
 - Useful for module structure, refactoring, migration, or naming conflicts.
 
-For advanced details and full task field definitions, see taskmaster-advanced.md and taskmaster-fields.md.
+For advanced details and full task field definitions, see taskmaster-options.md and taskmaster-commands.md.
 
 This workflow is a guideline. Adapt as needed for your project and team.
